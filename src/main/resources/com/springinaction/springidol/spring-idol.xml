@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <!--<start id="duke_bean" />--> 
+  <bean id="duke" class="com.springinaction.springidol.Juggler">
+    <constructor-arg value="15"/>
+  </bean>
+
+    <bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />
+
+    <bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler">
+        <constructor-arg value="15" />
+        <constructor-arg ref="sonnet29"/>
+    </bean>
+
+    <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument" ref="piano"/>
+    </bean>
+
+    <bean id="saxophone" class="com.springinaction.springidol.Saxophone"/>
+
+    <bean id="piano" class="com.springinaction.springidol.Piano"/>
+
+    <bean id="hank" class="com.springinaction.springidol.OneManBand">
+        <property name="instruments">
+            <list>
+                <ref bean="guitar" />
+                <ref bean="cymbal" />
+                <ref bean="harmonica" />
+            </list>
+        </property>
+    </bean>
+
+</beans>
+
+
+  <!--<end id="duke_bean" />-->
+
+  <!--&lt;!&ndash;<start id="poeticduke_bean" />&ndash;&gt; -->
+  <!--<bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler">-->
+    <!--<constructor-arg value="15" />-->
+    <!--<constructor-arg ref="sonnet29" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="poeticduke_bean" />&ndash;&gt;-->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="sonnet29_bean" />&ndash;&gt; -->
+  <!--<bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />-->
+  <!--&lt;!&ndash;<end id="sonnet29_bean" />&ndash;&gt;-->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="kenny_bean" />&ndash;&gt; -->
+  <!--<bean id="kenny" class="com.springinaction.springidol.Instrumentalist">-->
+    <!--<property name="song" value="Jingle Bells" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="kenny_bean" />&ndash;&gt;-->
+
+  <!--&lt;!&ndash;<start id="kenny2_bean" />&ndash;&gt; -->
+  <!--<bean id="kenny2" class="com.springinaction.springidol.Instrumentalist">-->
+    <!--<property name="song" value="Jingle Bells" />-->
+    <!--<property name="instrument" ref="saxophone" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="kenny2_bean" />&ndash;&gt;-->
+
+  <!--&lt;!&ndash;<start id="carl_bean"/>&ndash;&gt; -->
+  <!--<bean id="carl" class="com.springinaction.springidol.Instrumentalist">-->
+    <!--<property name="song" value="#{kenny.song}" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="carl_bean"/>&ndash;&gt;-->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="stan_bean"/>&ndash;&gt; -->
+  <!--<bean id="stan" class="com.springinaction.springidol.Instrumentalist">-->
+    <!--<property name="song" value="#{systemProperties.STANS_SONG}" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="stan_bean"/>&ndash;&gt;-->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="song_list_bean" />&ndash;&gt; -->
+  <!--<util:list id="songList">-->
+    <!--<bean class="com.springinaction.springidol.Song">-->
+      <!--<constructor-arg value="That Old Black Magic" />-->
+      <!--<constructor-arg value="Arlen and Mercer" />-->
+      <!--<constructor-arg value="That old black magic has me in its spell..." />-->
+    <!--</bean>-->
+    <!--<bean class="com.springinaction.springidol.Song">-->
+      <!--<constructor-arg value="Every Little Thing She Does is Magic" />-->
+      <!--<constructor-arg value="Sting" />-->
+      <!--<constructor-arg value="Though Ive tried before to tell her..." />-->
+    <!--</bean>-->
+    <!--<bean class="com.springinaction.springidol.Song">-->
+      <!--<constructor-arg value="Magic Carpet Ride" />-->
+      <!--<constructor-arg value="Moreve and Kay" />-->
+      <!--<constructor-arg value=-->
+        <!--"I like to dream yes, yes, right between my sound machine..." />-->
+    <!--</bean>-->
+  <!--</util:list>-->
+  <!--&lt;!&ndash;<end id="song_list_bean" />&ndash;&gt;-->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="songbook_bean"/>&ndash;&gt; -->
+  <!--<bean id="magicSongBook"-->
+      <!--class="com.springinaction.springidol.SongBook">-->
+    <!--<constructor-arg value="#{songList.![title]}" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="songbook_bean"/>&ndash;&gt;-->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="ricky_bean"/>&ndash;&gt; -->
+  <!--<bean id="ricky"-->
+      <!--class="com.springinaction.springidol.Instrumentalist">-->
+    <!--<property name="song" value="#{magicSongBook.pickASong()}" />-->
+  <!--</bean>-->
+  <!--&lt;!&ndash;<end id="ricky_bean"/>&ndash;&gt;-->
+  <!-- -->
+  <!-- -->
+  <!--&lt;!&ndash;<start id="saxophone_bean" />&ndash;&gt; -->
+  <!--<bean id="saxophone"-->
+      <!--class="com.springinaction.springidol.Saxophone" />-->
+  <!--&lt;!&ndash;<end id="saxophone_bean" />&ndash;&gt;-->
+  <!-- -->
+
