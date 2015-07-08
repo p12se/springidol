@@ -24,6 +24,8 @@
     </bean>
 
     <bean id="saxophone" class="com.springinaction.springidol.Saxophone"/>
+    <bean id="guitar" class="com.springinaction.springidol.Guitar"/>
+    <bean id="hammerDulciner" class="com.springinaction.springidol.HammerDulciner"/>
 
     <!--<bean id="piano" class="com.springinaction.springidol.Piano"/>-->
 

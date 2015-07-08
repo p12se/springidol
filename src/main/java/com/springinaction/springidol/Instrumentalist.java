@@ -1,7 +1,10 @@
 //<start id="instrumentalist_java" /> 
 package com.springinaction.springidol;
 
+import com.springinaction.springidol.qulifiers.*;
+import com.springinaction.springidol.qulifiers.Strummed;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class Instrumentalist implements Performer {
   public Instrumentalist() {
@@ -26,9 +29,12 @@ public class Instrumentalist implements Performer {
     return song;
   }
 
+  @Autowired
+  @StringedInstrument
+  @Strummed
   private Instrument instrument;
 
-  @Autowired
+
   public void setInstrument(Instrument instrument) { //<co id="co_injectInstrument"/>
     this.instrument = instrument;
   }
