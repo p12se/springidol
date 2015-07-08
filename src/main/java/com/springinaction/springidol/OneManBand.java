@@ -1,21 +1,22 @@
 //<start id="onemanband_java" /> 
 package com.springinaction.springidol;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.Properties;
 
 public class OneManBand implements Performer {
   public OneManBand() {
   }
 
   public void perform() throws PerformanceException {
-    for (Instrument instrument : instruments) {
-      instrument.play();
-    }
+//    for (Instrument instrument : instruments.keySet()); {
+//      instrument.play();
+//    }
   }
 
-  private Collection<Instrument> instruments;
+  private Properties instruments;
 
-  public void setInstruments(Collection<Instrument> instruments) {
+  public void setInstruments(Properties instruments) {
     this.instruments = instruments; //<co id="co_injectInstrumentCollection"/>
   }
 }

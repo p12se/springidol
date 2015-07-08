@@ -2,6 +2,7 @@
 package com.springinaction.springidol;
 
 public class PoeticJuggler extends Juggler {
+  private int beanBags;
   private Poem poem;
 
   public PoeticJuggler(Poem poem) { //<co id="co_injectPoem"/>
@@ -12,10 +13,12 @@ public class PoeticJuggler extends Juggler {
   public PoeticJuggler(int beanBags, Poem poem) { // <co id="co_injectPoemBeanBags"/>
     super(beanBags);
     this.poem = poem;
+    this.beanBags =beanBags;
   }
 
   public void perform() throws PerformanceException {
-    super.perform();
+//    super.perform();
+    System.out.println(beanBags);
     System.out.println("While reciting...");
     poem.recite();
   }

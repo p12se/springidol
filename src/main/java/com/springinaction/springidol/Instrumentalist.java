@@ -1,6 +1,8 @@
 //<start id="instrumentalist_java" /> 
 package com.springinaction.springidol;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Instrumentalist implements Performer {
   public Instrumentalist() {
   }
@@ -26,6 +28,7 @@ public class Instrumentalist implements Performer {
 
   private Instrument instrument;
 
+  @Autowired
   public void setInstrument(Instrument instrument) { //<co id="co_injectInstrument"/>
     this.instrument = instrument;
   }

@@ -2,12 +2,12 @@
 package com.springinaction.springidol;
 
 public class Juggler implements Performer {
-  private int beanBags = 3;
+  private double beanBags = 4;
 
   public Juggler() {
   }
 
-  public Juggler(int beanBags) {
+  public Juggler(double beanBags) {
     this.beanBags = beanBags;
   }
 
