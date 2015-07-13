@@ -4,6 +4,7 @@ package com.springinaction.springidol;
 import com.springinaction.springidol.qulifiers.*;
 import com.springinaction.springidol.qulifiers.Strummed;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 
 public class Instrumentalist implements Performer {
@@ -14,7 +15,7 @@ public class Instrumentalist implements Performer {
     System.out.print("Playing " + song + " : ");
     instrument.play();
   }
-
+  @Value("asdfasdfasfasdfdafafaaffadfafffafaaffaafafdsfadsfdfads")
   private String song;
 
   public void setSong(String song) { //<co id="co_injectSong"/>
@@ -29,9 +30,9 @@ public class Instrumentalist implements Performer {
     return song;
   }
 
-  @Autowired
+  @Autowired(required = false)
   @StringedInstrument
-  @Strummed
+
   private Instrument instrument;
 
 

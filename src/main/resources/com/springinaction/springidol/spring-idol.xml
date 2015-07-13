@@ -15,17 +15,17 @@
     <bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />
 
     <bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler" autowire="constructor">
-    <constructor-arg name="beanBags" value="2"/>
+      <constructor-arg name="beanBags" value="2"/>
     </bean>
 
     <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
-        <property name="song" value="Jingle Bells"/>
+        <!--<property name="song" value="Jingle Bells"/>-->
         <!--<property name="instrument" ref="piano"/>-->
     </bean>
 
-    <bean id="saxophone" class="com.springinaction.springidol.Saxophone"/>
+    <!--<bean id="saxophone" class="com.springinaction.springidol.Saxophone"/>-->
     <bean id="guitar" class="com.springinaction.springidol.Guitar"/>
-    <bean id="hammerDulciner" class="com.springinaction.springidol.HammerDulciner"/>
+    <!--<bean id="hammerDulciner" class="com.springinaction.springidol.HammerDulciner"/>-->
 
     <!--<bean id="piano" class="com.springinaction.springidol.Piano"/>-->
 
