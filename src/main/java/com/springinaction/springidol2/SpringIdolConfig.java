@@ -1,5 +1,6 @@
-package com.springinaction.springidol;
+package com.springinaction.springidol2;
 
+import com.springinaction.springidol.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
