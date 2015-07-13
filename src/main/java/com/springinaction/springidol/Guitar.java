@@ -2,8 +2,9 @@
 package com.springinaction.springidol;
 
 import com.springinaction.springidol.qulifiers.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@StringedInstrument
 public class Guitar implements Instrument {
   public Guitar() {
   }

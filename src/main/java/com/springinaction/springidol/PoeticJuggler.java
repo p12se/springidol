@@ -17,10 +17,10 @@ public class PoeticJuggler extends Juggler {
   }
 
   public void perform() throws PerformanceException {
-//    super.perform();
+    super.perform();
     System.out.println(beanBags);
     System.out.println("While reciting...");
-    poem.recite();
+//    poem.recite();
   }
 }
 //<end id="poeticjuggler_java" />
