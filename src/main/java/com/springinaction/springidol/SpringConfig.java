@@ -1,5 +1,7 @@
 package com.springinaction.springidol;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +13,34 @@ public class SpringConfig {
 
     @Bean
     public Performer serg(){
-        return new Juggler();
+
+        return new Juggler("Serg");
+    }
+    @Bean
+    public Guitar guitar(){
+        return new Guitar();
+    }
+
+    @Bean
+    public Piano piano(){
+        return new Piano();
+    }
+
+    @Bean
+    public Poem sonnet29(){
+        return new Sonnet29();
+    }
+
+    @Bean
+    public Performer poeticDuke(){
+        return new PoeticJuggler(sonnet29());
+    }
+
+    @Bean
+    public Performer kenny(){
+        Instrumentalist kenny = new Instrumentalist();
+        kenny.setSong("DISSKO-DISSKO");
+        return kenny;
     }
 
 }

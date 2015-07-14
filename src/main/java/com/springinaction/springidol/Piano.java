@@ -1,6 +1,8 @@
 //<start id="piano_java" /> 
 package com.springinaction.springidol;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Piano implements Instrument {
   public Piano() {
   }
