@@ -13,10 +13,11 @@
 
   <aop:config>
     <aop:aspect ref="audience">
-      <aop:before pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="takeSeats"/>
-      <aop:before pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="turnOffCellPhones"/>
-      <aop:after-returning pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="applaud"/>
-      <aop:after-throwing pointcut="execution(* com.springinaction.springidol.Performer.perform(..))"
+      <aop:pointcut id="performance" expression="execution(* com.springinaction.springidol.Performer.perform(..))"/>
+      <aop:before pointcut-ref="performance" method="takeSeats"/>
+      <aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
+      <aop:after-returning pointcut-ref="performance" method="applaud"/>
+      <aop:after-throwing pointcut-ref="performance"
                           method="demandRefund"/>
     </aop:aspect>
   </aop:config>
