@@ -45,4 +45,11 @@ public class SpringConfig {
         return new Audience();
     }
 
+    @Bean
+    public Magician magician() {return new Magician();}
+
+    @Bean Volunteer volunteer(){
+        return new Volunteer();
+    }
+
 }
