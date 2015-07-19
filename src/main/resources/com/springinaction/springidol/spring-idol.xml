@@ -29,10 +29,11 @@
   <!--</aop:aspect>-->
 
       <aop:aspect ref="magician">
-        <aop:pointcut id="thinking"  expression="execution(*
-        com.springinaction.springidol.Thinker.thinkOfSomething(String)) and args(thoughts)" />
+        <aop:pointcut id="thinking"  expression="execution(* com.springinaction.springidol.Thinker.thinkOfSomething(String)) and args(thoughts)" />
         <aop:before pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts" />
-
+        <aop:declare-parents types-matching="com.springinaction.springidol.Performer+"
+                             implement-interface="com.springinaction.springidol.Contestant"
+                             default-impl="com.springinaction.springidol.GraciousContestant"/>
       </aop:aspect>
 
 </aop:config>
