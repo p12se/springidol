@@ -12,17 +12,21 @@
   </context:component-scan>
 
   <aop:config>
-      <aop:pointcut id="poem" expression="execution(* com.springinaction.springidol.Poem.recite(..))"/>
-      <aop:aspect ref="audience">
-      <aop:pointcut id="performance" expression="execution(* com.springinaction.springidol.Performer.perform(..))"/>
-      <aop:before pointcut-ref="performance" method="takeSeats"/>
-      <aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
-      <aop:after-returning pointcut-ref="performance" method="applaud"/>
-      <aop:after-throwing pointcut-ref="performance"
-                          method="demandRefund"/>
+      <!--<aop:pointcut id="poem" expression="execution(* com.springinaction.springidol.Poem.recite(..))"/>-->
+      <!--<aop:aspect ref="audience">-->
+      <!--<aop:pointcut id="performance" expression="execution(* com.springinaction.springidol.Performer.perform(..))"/>-->
+      <!--<aop:before pointcut-ref="performance" method="takeSeats"/>-->
+      <!--<aop:before pointcut-ref="performance" method="turnOffCellPhones"/>-->
+      <!--<aop:after-returning pointcut-ref="performance" method="applaud"/>-->
+      <!--<aop:after-throwing pointcut-ref="performance"-->
+                          <!--method="demandRefund"/>-->
 
-          <aop:before pointcut-ref="poem" method="ura"/>
-      </aop:aspect>
+          <!--<aop:before pointcut-ref="poem" method="ura"/>-->
+      <!--</aop:aspect>-->
+    <aop:aspect ref="audience">
+      <aop:pointcut id="perfoormance2" expression="execution(* com.springinaction.springidol.Performer.perform(..))"/>
+      <aop:around pointcut-ref="perfoormance2" method="watchPerformance"/>
+    </aop:aspect>
   </aop:config>
 
   <!--<start id="duke_bean" />--> 
