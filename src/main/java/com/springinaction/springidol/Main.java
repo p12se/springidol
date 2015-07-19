@@ -12,10 +12,10 @@ public class Main {
     public static void main(String[] args) throws PerformanceException {
         ApplicationContext context = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-idol.xml");
 //
-//        Performer performer = (Performer) context.getBean("poeticDuke");
-//        performer.perform();
-        Volunteer volunteer = (Volunteer) context.getBean("volunteer");
-        volunteer.thinkOfSomething("BIg burger");
+        Performer performer = (Performer) context.getBean("kenny");
+        performer.perform();
+//        Volunteer volunteer = (Volunteer) context.getBean("volunteer");
+//        volunteer.thinkOfSomething("BIg burger");
 
 
     }

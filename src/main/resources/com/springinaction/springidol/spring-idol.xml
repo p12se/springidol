@@ -4,14 +4,19 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
   <context:component-scan base-package="com.springinaction.springidol">
     <!--<context:include-filter type="assignable" expression="com.springinaction.springidol.Guitar"/>-->
     <!--<context:exclude-filter type="assignable" expression="com.springinaction.springidol2.SpringIdolConfig"/>-->
   </context:component-scan>
+  <aop:aspectj-autoproxy/>
 
-  <aop:config proxy-target-class="true">
+  <!--<aop:config proxy-target-class="true">-->
   <!--<aop:pointcut id="poem" expression="execution(* com.springinaction.springidol.Poem.recite(..))"/>-->
   <!--<aop:aspect ref="audience">-->
   <!--<aop:pointcut id="performance" expression="execution(* com.springinaction.springidol.Performer.perform(..))"/>-->
@@ -28,15 +33,15 @@
   <!--<aop:around pointcut-ref="perfoormance2" method="watchPerformance"/>-->
   <!--</aop:aspect>-->
 
-      <aop:aspect ref="magician">
-        <aop:pointcut id="thinking"  expression="execution(* com.springinaction.springidol.Thinker.thinkOfSomething(String)) and args(thoughts)" />
-        <aop:before pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts" />
-        <aop:declare-parents types-matching="com.springinaction.springidol.Performer+"
-                             implement-interface="com.springinaction.springidol.Contestant"
-                             default-impl="com.springinaction.springidol.GraciousContestant"/>
-      </aop:aspect>
+      <!--<aop:aspect ref="magician">-->
+        <!--<aop:pointcut id="thinking"  expression="execution(* com.springinaction.springidol.Thinker.thinkOfSomething(String)) and args(thoughts)" />-->
+        <!--<aop:before pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts" />-->
+        <!--<aop:declare-parents types-matching="com.springinaction.springidol.Performer+"-->
+                             <!--implement-interface="com.springinaction.springidol.Contestant"-->
+                             <!--default-impl="com.springinaction.springidol.GraciousContestant"/>-->
+      <!--</aop:aspect>-->
 
-</aop:config>
+<!--</aop:config>-->
 
   <!--<start id="duke_bean" />--> 
   <!--<bean id="duke" class="com.springinaction.springidol.Juggler">-->
