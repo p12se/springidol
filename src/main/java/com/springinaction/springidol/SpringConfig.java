@@ -28,10 +28,10 @@ public class SpringConfig {
         return new Sonnet29();
     }
 
-    @Bean
-    public Performer poeticDuke(){
-        return new PoeticJuggler(sonnet29());
-    }
+//    @Bean
+//    public Performer poeticDuke(){
+//        return new PoeticJuggler(sonnet29());
+//    }
 
     @Bean
     public Performer kenny(){
@@ -45,11 +45,11 @@ public class SpringConfig {
         return new Audience();
     }
 //
-//    @Bean
-//    public Magician magician() {return new Magician();}
-//
-//    @Bean Volunteer volunteer(){
-//        return new Volunteer();
-//    }
+    @Bean
+    public Magician magician() {return new Magician();}
+
+    @Bean Volunteer volunteer(){
+        return new Volunteer();
+    }
 
 }
